@@ -40,7 +40,7 @@ This allows for more control over both appearance and functionality
             </div>
             <div class="ui-step-controls">
                 <button class="btn ui-step-previous">Previous</button>
-                <button class="btn btn-success ui-step-finish">Finish</button>
+                <button class="btn btn-primary ui-step-next">Next</button>
             </div>
         </div>
     </div>
@@ -54,7 +54,7 @@ This allows for more control over both appearance and functionality
                 <p>Step Content Here</p>
             </div>
             <div class="ui-step-controls">
-                <!--<button class="btn ui-step-previous">Previous</button>-->
+                <button class="btn ui-step-previous">Previous</button>
                 <button class="btn btn-primary ui-step-next">Next</button>
             </div>
         </div>
@@ -69,8 +69,8 @@ This allows for more control over both appearance and functionality
                 <p>Step Content Here</p>
             </div>
             <div class="ui-step-controls">
-                <!--<button class="btn ui-step-previous">Previous</button>-->
-                <button class="btn btn-primary ui-step-next">Next</button>
+                <button class="btn ui-step-previous">Previous</button>
+                <button class="btn btn-success ui-step-finish">Finish</button>
             </div>
         </div>
     </div>
