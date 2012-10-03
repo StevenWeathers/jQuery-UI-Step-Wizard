@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Step Wizard</title>
+
+        <!-- Le styles -->
+        <link href="css/bootstrap.css" rel="stylesheet"><!-- For DOC Only Purposes -->
+        <link href="css/prettify.css" type="text/css" rel="stylesheet" /><!-- For DOC Only Purposes -->
+        <link href="css/ui-step.css" rel="stylesheet"><!-- Generic styling for ui-step-wizard -->
+        <style>
+            h2 + table, h3 + table, h4 + table, h2 + .row {
+                margin-top: 5px;
+            }
+        </style>
+    </head>
+    <body onload="prettyPrint()">
+        <div class="container">
+            <section id="collapse">
+                <div class="page-header">
+                    <h1>Step Wizard <small>by Steven Weathers</small></h1>
+                </div>
+                <h2>Example Step Wizard</h2>
+                <div class="ui-step-wizard">
+                    <div class="ui-step">
+                        <div class="ui-step-header">
+                            <span class="ui-step-number">1</span>
+                            <h5 class="ui-step-title">Step Title</h5>
+                        </div>
+                        <div class="ui-step-container">
+                            <div class="ui-step-content">
+                                <p>Step Content Here</p>
+                            </div>
+                            <div class="ui-step-controls">
+                                <!--<button class="btn ui-step-previous">Previous</button>-->
+                                <button class="btn btn-primary ui-step-next">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-step">
+                        <div class="ui-step-header">
+                            <span class="ui-step-number">2</span>
+                            <h5 class="ui-step-title">Step Title</h5>
+                        </div>
+                        <div class="ui-step-container">
+                            <div class="ui-step-content">
+                                <p>Step Content Here</p>
+                            </div>
+                            <div class="ui-step-controls">
+                                <button class="btn ui-step-previous">Previous</button>
+                                <button class="btn btn-primary ui-step-next">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-step">
+                        <div class="ui-step-header">
+                            <span class="ui-step-number">3</span>
+                            <h5 class="ui-step-title">Step Title</h5>
+                        </div>
+                        <div class="ui-step-container">
+                            <div class="ui-step-content">
+                                <p>Step Content Here</p>
+                            </div>
+                            <div class="ui-step-controls">
+                                <button class="btn ui-step-previous">Previous</button>
+                                <button class="btn btn-success ui-step-finish">Finish</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <h2>Using Step Wizard</h2>
+                <p>Enable via javascript:</p>
+                <pre class="prettyprint linenums">$('.ui-step-wizard').stepWizard();</pre>
+
+                <h3>Markup</h3>
+            <pre class="prettyprint linenums lang-html">
+&lt;div class="ui-step-wizard"&gt;&lt;!-- any class or ID used to enable the plugin as stated above --&gt;
+    &lt;div class="ui-step"&gt;&lt;!-- each step --&gt;
+        &lt;div class="ui-step-header"&gt;
+            &lt;span class="ui-step-number"&gt;1&lt;/span&gt;
+            &lt;h5 class="ui-step-title"&gt;Step Title&lt;/h5&gt;
+        &lt;/div&gt;
+        &lt;div class="ui-step-container"&gt;
+            &lt;div class="ui-step-content"&gt;
+                &lt;!-- step content goes here --&gt;
+            &lt;/div&gt;
+            &lt;div class="ui-step-controls"&gt;
+                &lt;button class="ui-step-previous"&gt;Previous&lt;/button&gt;&lt;!-- be sure not to include on first step --&gt;
+                &lt;button class="ui-step-next"&gt;Next&lt;/button&gt;
+                &lt;!-- next button needs to be &lt;button&gt; element for disabling method to work. --&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+            <h3>Methods</h3>
+            <h4>.stepWizard(options)</h4>
+            <p>Activates your content as a step wizard. Accepts an optional options <code>object</code>.
+<pre class="prettyprint linenums">
+$('.ui-step-wizard').stepWizard({
+  stepClass: 'ui-step'
+});</pre>
+            <h4>.stepWizard( 'toggleButton' );</h4>
+            <p>Toggles the current step's button state (disabled).</p>
+            <h4>.stepWizard( 'toggleButton', 'enable' );</h4>
+            <p>Toggles the current step's button state (enabled).</p>
+            <h4>.stepWizard( 'next' );</h4>
+            <p>Gets the current step and moves to the next step.</p>
+            <h4>.stepWizard( 'prev' );</h4>
+            <p>Gets the current step and moves to the previous step.</p>
+            <h4>.stepWizard( 'modify', $(target) );</h4>
+            <p>Gets the current step and moves to the target step.</p>
+
+            <h3>Options</h3>
+            <table class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th style="width: 100px;">Name</th>
+                    <th style="width: 50px;">type</th>
+                    <th style="width: 50px;">default</th>
+                    <th>description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>activeStepClass</td>
+                    <td>css classname</td>
+                    <td>ui-step-active</td>
+                    <td>Class used on the current active step, class name only not selector</td>
+                </tr>
+                <tr>
+                    <td>stepClass</td>
+                    <td>css classname</td>
+                    <td>ui-step</td>
+                    <td>Class used on each step's main element, class name only not selector</td>
+                </tr>
+                <tr>
+                    <td>stepHeaderClass</td>
+                    <td>css classname</td>
+                    <td>ui-step-header</td>
+                    <td>Class used on each step's header element that houses the title/number and acts as an accordian header, class name only not selector</td>
+                </tr>
+                <tr>
+                    <td>stepContainerClass</td>
+                    <td>css classname</td>
+                    <td>ui-step-container</td>
+                    <td>Class used on each step's container element that houses the content and actions, class name only not selector</td>
+                </tr>
+                <tr>
+                    <td>prevBtnClass</td>
+                    <td>css classname</td>
+                    <td>ui-step-previous</td>
+                    <td>Class used on each step's previous button, class name only not selector</td>
+                </tr>
+                <tr>
+                    <td>nextBtnClass</td>
+                    <td>css classname</td>
+                    <td>ui-step-next</td>
+                    <td>Class used on each step's next button, class name only not selector</td>
+                </tr>
+                <tr>
+                    <td>modifyAllowed</td>
+                    <td>true/false bolean</td>
+                    <td>true</td>
+                    <td>Enable/Disable the header click to modify step functionality</td>
+                </tr>
+                <tr>
+                    <td>modifyDirection</td>
+                    <td>string: both, forward, or backward</td>
+                    <td>both</td>
+                    <td>When Modify is allowed controls which direction the user may step</td>
+                </tr>
+                </tbody>
+            </table>
+            </section>
+            <footer class="footer">
+                <p class="pull-right"><a href="#">Back to top</a></p>
+            </footer>
+        </div>
+        <script src="js/jquery-1.7.1.js"></script><!-- required for jquery ui and step wizard -->
+        <script src="js/jquery-ui-1.8.18.min.js"></script><!-- required for UI Widget Factory -->
+        <script src="js/prettify.js"></script><!-- For DOC Only Purposes -->
+        <script src="js/jquery.step-wizard.js"></script>
+        <script>
+            /* inline for demo purposes only */
+            $('.ui-step-wizard').stepWizard();
+        </script>
+    </body>
+</html>

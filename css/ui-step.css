@@ -1,0 +1,17 @@
+.ui-step { border: 1px solid #eee; margin-top: 20px; width: 100%; overflow: hidden; border-radius: 3px; }
+.ui-step-header { background: #eee; overflow: hidden; padding: 10px; }
+.ui-step-number { float: left; border-radius: 16px; padding: 0 6px; font-weight: bold; margin-right: 10px; background: #bbb; }
+.ui-step-title { float: left; font-size: 16px; line-height: 16px; }
+.ui-step-content { padding: 10px; }
+.ui-step-controls { margin: 0 10px 10px; float: right; }
+.ui-step .ui-step-container { display: none; }
+
+.ui-step-completed { border: 1px solid #dff0d8; }
+.ui-step-completed .ui-step-header { background: #dff0d8; }
+.ui-step-completed .ui-step-header .ui-step-title { color: #468847; }
+.ui-step-completed .ui-step-header .ui-step-number { color: #dff0d8; background: #468847; }
+
+.ui-step-active { border: 1px solid #d9edf7; }
+.ui-step-active .ui-step-header { color: #3a87ad; background: #d9edf7; }
+.ui-step-active .ui-step-header .ui-step-title { color: #3a87ad; }
+.ui-step-active .ui-step-header .ui-step-number { color: #d9edf7; background: #3a87ad; }
