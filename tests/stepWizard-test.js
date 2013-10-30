@@ -26,7 +26,7 @@ test("step next", function(){
 
     deepEqual( $('.ui-step-active').index(), 1, 'Second Step is Active' );
 });
-test("step next", function(){
+test("step previous", function(){
     expect(1);
     $('.ui-step-wizard').stepWizard('next');
     $('.ui-step-wizard').stepWizard('prev');
